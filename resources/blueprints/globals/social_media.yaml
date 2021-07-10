@@ -1,0 +1,66 @@
+sections:
+  social_media:
+    display: 'Social Media'
+    fields:
+      -
+        handle: social_media_links
+        field:
+          mode: table
+          add_row: 'Add Link'
+          reorderable: true
+          display: 'Social Media Links'
+          type: grid
+          icon: grid
+          listable: hidden
+          fields:
+            -
+              handle: name
+              field:
+                input_type: text
+                antlers: false
+                display: Name
+                type: text
+                icon: text
+                listable: hidden
+                placeholder: Twitter
+            -
+              handle: url
+              field:
+                input_type: url
+                antlers: false
+                display: URL
+                type: text
+                icon: text
+                listable: hidden
+                placeholder: 'https://twitter.com/jack'
+            -
+              handle: font_awesome_classes
+              field:
+                input_type: text
+                antlers: false
+                display: 'Font Awesome Classes'
+                type: text
+                icon: text
+                listable: hidden
+                placeholder: 'fab fa-twitter'
+            -
+              handle: hover_color
+              field:
+                placeholder: text-strem-pink
+                input_type: text
+                antlers: false
+                display: 'Hover Color'
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: aria_label
+              field:
+                placeholder: inhal3exh4le
+                input_type: text
+                antlers: false
+                display: 'Aria Label'
+                type: text
+                icon: text
+                instructions: 'Used in the aria-label markup.'
+                listable: hidden

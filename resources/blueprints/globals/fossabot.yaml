@@ -1,0 +1,165 @@
+sections:
+  birthday:
+    display: Birthday
+    fields:
+      -
+        handle: birthday
+        field:
+          mode: single
+          time_enabled: true
+          time_required: true
+          earliest_date: '1970-01-01'
+          full_width: true
+          inline: true
+          columns: 1
+          rows: 1
+          display: Birthday
+          type: date
+          icon: date
+          instructions: 'It''s your birthday duh!'
+          listable: hidden
+      -
+        handle: birthday_timezone
+        field:
+          placeholder: America/New_York
+          input_type: text
+          antlers: false
+          display: 'Birthday Timezone'
+          type: text
+          icon: text
+          instructions: 'It''s the timezone you were born in duh.'
+          listable: hidden
+      -
+        handle: on_birthday_response
+        field:
+          input_type: text
+          antlers: false
+          display: 'On Birthday Chat Message'
+          type: text
+          icon: text
+          instructions: 'Chat message to return when it is your birthday'
+          listable: hidden
+          placeholder: 'It''s ma birthday'
+      -
+        handle: on_birthday_emojis
+        field:
+          display: 'On Birthday Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to choose from for the on birthday chat message.'
+          listable: hidden
+      -
+        handle: birthday_response
+        field:
+          input_type: text
+          antlers: false
+          display: 'Birthday Chat Message'
+          type: text
+          icon: text
+          instructions: 'Chat message to return for days until your birthday. Use %daysUntil% for the dynamic number of days until birthday.'
+          listable: hidden
+          placeholder: 'My birthday is in %daysUntil% days'
+      -
+        handle: birthday_emojis
+        field:
+          display: 'Birthday Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to choose from when sending the days until birthday chat message.'
+          listable: hidden
+  age:
+    display: Age
+    fields:
+      -
+        handle: age_response
+        field:
+          placeholder: '(%age% (Birthday 08/11))'
+          input_type: text
+          antlers: false
+          display: 'Age Chat Message'
+          type: text
+          icon: text
+          instructions: 'The chat message you wish to return to display your age. Please use %age% where you want the dynamic age to be at in the message.'
+          listable: hidden
+      -
+        handle: age_emojis
+        field:
+          display: 'Age Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to show in the age response.'
+          listable: hidden
+  apex_rank:
+    display: 'Apex Rank'
+    fields:
+      -
+        handle: apex_rank_response
+        field:
+          placeholder: '%rankName% %rankDiv%'
+          input_type: text
+          antlers: false
+          display: 'Apex Rank Chat Message'
+          type: text
+          icon: text
+          instructions: 'Message to send for the apex rank command. Please use %rankName% for the name of the rank (i.e. Platinum, Bronze, etc) and %rankDiv% for the roman numeral rank division (i.e. I, IV, etc).'
+          listable: hidden
+      -
+        handle: apex_rank_emojis
+        field:
+          display: 'Apex Rank Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to show in the apex rank response.'
+          listable: hidden
+      -
+        handle: apex_account_uid
+        field:
+          display: 'Apex UID'
+          type: integer
+          icon: integer
+          instructions: 'The Apex UID for your Apex Legends account.'
+          listable: hidden
+  fallback:
+    display: Fallback
+    fields:
+      -
+        handle: not_response
+        field:
+          placeholder: 'Oh snap, bruh that command does not exist'
+          input_type: text
+          antlers: false
+          display: 'Not Found Chat Message'
+          type: text
+          icon: text
+          instructions: 'Chat message to send when someone hits an invalid Fossabot URL.'
+          listable: hidden
+      -
+        handle: not_found_emojis
+        field:
+          display: 'Not Found Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to show in the not found response.'
+          listable: hidden
+  exception:
+    display: Exception
+    fields:
+      -
+        handle: exception_response
+        field:
+          placeholder: 'Oh snap, we had some trouble with your request NotLikeThis'
+          input_type: text
+          antlers: false
+          display: 'Exception Chat Message'
+          type: text
+          icon: text
+          instructions: 'Chat message to show when an exception occurs during a Fossabot command.'
+          listable: hidden
+      -
+        handle: exception_emojis
+        field:
+          display: 'Exception Emojis'
+          type: list
+          icon: list
+          instructions: 'List of emojis to show in the exception response.'
+          listable: hidden

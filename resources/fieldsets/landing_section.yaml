@@ -1,0 +1,32 @@
+title: 'Landing Section'
+fields:
+  -
+    handle: background_image
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: 'Background Image'
+      type: assets
+      icon: assets
+      instructions: 'This will be shown full screen as the landing section image.'
+      listable: hidden
+  -
+    handle: landing_section_quotes
+    field:
+      collapse: false
+      max_sets: 10
+      sets:
+        quotes:
+          display: Quotes
+          fields:
+            -
+              import: quote
+              prefix: landing_
+      display: 'Landing Section Quotes'
+      type: replicator
+      icon: replicator
+      instructions: 'List of quotes to choose from on the home page.'
+      listable: hidden

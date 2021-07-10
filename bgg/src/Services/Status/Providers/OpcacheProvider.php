@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * This file is part of the brandon14/brand0n.gg package.
+ *
+ * Copyright 2017-2020 Brandon Clothier
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+
+declare(strict_types=1);
+
+namespace Brand0nGG\Services\Status\Providers;
+
+use function function_exists;
+use Brand0nGG\Contracts\Services\Status\StatusServiceProvider;
+
+/**
+ * Class OpcacheProvider.
+ *
+ * PHP Opcache status provider. Class will check to see if opcache is enabled, and if so return the
+ * status array from opcache.
+ *
+ * **NOTE:**
+ * We are not testing the functionality of this class. Sometimes it is hard to test internal functions,
+ * and since this is a core PHP function so long as opcache is enabled, we check that opcache status is
+ * available, and if so we get the opcache status array. According to the PHP docs, that either returns
+ * false on failure, or an array of the status details, so if it returns false, we return a status of
+ * an error, otherwise we return the opcache status array. If opcache isn't present, we return that it
+ * is disabled.
+ *
+ * @author Brandon Clothier <brandon14125@gmail.com>
+ */
+class OpcacheProvider implements StatusServiceProvider
+{
+    /**
+     * @var string
+     */
+    protected string $detailKey;
+
+    /**
+     * Constructs a new OpcacheProvider.
+     *
+     * @param string $detailKey Key name for opcache details
+     *
+     * @return void
+     */
+    public function __construct(string $detailKey = 'details')
+    {
+        $this->setDetailKey($detailKey);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getStatus(): array
+    {
+        // @codeCoverageIgnoreStart
+        // It's hard to mock internal PHP functions. I mean its opcache_get_status, should
+        // either return an array of the status, or false on failure.
+        if (function_exists('opcache_get_status')) {
+            $status = \opcache_get_status(false);
+
+            return $status === false
+                ? ['status' => StatusServiceProvider::STATUS_ERROR]
+                : ['status' => StatusServiceProvider::STATUS_OK, $this->detailKey => $status];
+        }
+
+        return ['status' => StatusServiceProvider::STATUS_DISABLED];
+        // @codeCoverageIgnoreEnd
+    }
+
+    /**
+     * TODO: Undocumented getter.
+     *
+     * @return string
+     */
+    public function getDetailKey(): string
+    {
+        return $this->detailKey;
+    }
+
+    /**
+     * TODO: Undocumented setter.
+     *
+     * @param string $detailKey
+     *
+     * @return \Brand0nGG\Services\Status\Providers\OpcacheProvider
+     */
+    public function setDetailKey(string $detailKey = 'details'): self
+    {
+        $this->detailKey = $detailKey;
+
+        return $this;
+    }
+}

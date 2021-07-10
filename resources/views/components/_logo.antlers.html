@@ -1,0 +1,10 @@
+{{#
+	@name Logo
+	@desc The logo component with a `width` attribute.
+#}}
+
+<a aria-label="Logo {{ config:app:name }}" href="{{ site:url }}">
+  <img src="{{ glide:configuration:header_logo width="{width}" height="{width}" fit='contain' }}" alt="{{ configuration:header_logo:alt ?? 'Logo' }}"/>
+</a>
+
+<a class="text-white hover:text-primary" href="{{ config:app:url }}"><strong>brand0n.gg</strong></a>

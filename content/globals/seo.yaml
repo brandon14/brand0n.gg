@@ -1,0 +1,24 @@
+title: SEO
+data:
+  title_separator: '|'
+  site_name: 'brand0n.gg > twitch.tv/brand0n14125'
+  json_ld_type: none
+  person_name: 'Brandon Clothier'
+  breadcrumbs: true
+  use_social_image_generation: true
+  social_images_collections:
+    - pages
+  og_image: og-social-image.png
+  twitter_image: twitter-social-image.png
+  twitter_handle: inhal3exh4le
+  sitemap_collections:
+    - pages
+  use_google_site_verification: false
+  use_fathom: false
+  use_cloudflare_web_analytics: false
+  tracker_type: gtag
+  google_analytics: GTM-N94K9BQ
+  anonymize_ip: true
+  use_cookie_banner: false
+  cookie_expiration_days: 365
+  link_privacy_statement: none

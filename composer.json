@@ -1,0 +1,138 @@
+{
+    "name": "brandon14/brand0n.gg",
+    "description": "brand0n.gg Statamic blog, the official gaming blog for Twitch streamer brand0n14125.",
+    "keywords": ["statamic", "cms", "website", "blog", "flat file", "laravel", "twitch", "gaming", "streamer"],
+    "license": "MIT",
+    "homepage": "https://brand0n.gg",
+    "type": "project",
+    "support": {
+        "issues": "https://github.com/brandon14/brand0n.gg/issues",
+        "source": "https://github.com/brandon14/brand0n.gg",
+        "email": "brandon14125@gmail.com"
+    },
+    "authors": [
+        {
+            "name": "Brandon Clothier",
+            "email": "brandon14125@gmail.com",
+            "homepage": "https://brandonclothier.me",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4.20",
+        "ext-bcmath": "*",
+        "ext-ctype": "*",
+        "ext-fileinfo": "*",
+        "ext-imagick": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "ext-redis": ">=5.0.0",
+        "ext-tokenizer": "*",
+        "ext-xml": "*",
+        "fideloper/proxy": "^4.4.1",
+        "fruitcake/laravel-cors": "^2.0.4",
+        "guzzlehttp/guzzle": "^7.3.0",
+        "htmlmin/htmlmin": "^8.0",
+        "laravel/framework": "^8.38.0",
+        "predis/predis": "^1.1",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "psr/simple-cache": "^1.0",
+        "ramsey/uuid": "^4.1",
+        "romanzipp/laravel-twitch": "^4.0",
+        "spatie/browsershot": "^3.47",
+        "statamic/cms": "3.1.*",
+        "wandersonwhcr/romans": "^1.3"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5.7",
+        "barryvdh/laravel-ide-helper": "^2.10.0",
+        "comcast/php-legal-licenses": "^1.1.6",
+        "facade/ignition": "^2.8.3",
+        "fakerphp/faker": "^1.14.1",
+        "filp/whoops": "^2.12.0",
+        "friendsofphp/php-cs-fixer": "^2.18.6",
+        "laravel/sail": "^1.0.1",
+        "laravel/tinker": "^2.6",
+        "mathiasgrimm/laravel-dot-env-gen": "^0.9.0",
+        "mikey179/vfsstream": "^1.6.8",
+        "mockery/mockery": "^1.4.3",
+        "nunomaduro/collision": "^5.4.0",
+        "nyholm/psr7": "^1.4",
+        "phpunit/phpunit": "^9.5.5",
+        "roave/security-advisories": "dev-latest",
+        "squizlabs/php_codesniffer": "^3.6.0",
+        "symfony/thanks": "^1.2.10",
+        "vimeo/psalm": "^4.7.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.20"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Brand0nGG\\": "bgg/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Brand0nGG\\Tests\\": "bgg/tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "analyze": "psalm",
+        "analyze:stats": "composer run-script analyze -- --stats",
+        "composer:validate": "composer validate --no-check-all --strict",
+        "lint:phpcs:check": "phpcs ./",
+        "lint:phpcs:fix": "phpcbf ./",
+        "lint:phpmd": "phpmd ./ text ./phpmd.xml",
+        "lint:php-cs-fixer:fix": [
+            "@putenv PHP_CS_FIXER_IGNORE_ENV=1",
+            "php-cs-fixer fix"
+        ],
+        "lint:php-cs-fixer:check": "composer run-script lint:php-cs-fixer:fix -- --dry-run --verbose",
+        "lint": "composer run-script lint:phpcs:check && composer run-script lint:php-cs-fixer:check && composer run-script lint:phpmd && composer run-script analyze",
+        "lint:fix": "composer run-script lint:phpcs:fix && composer run-script lint:php-cs-fixer:fix",
+        "test:phpunit": "phpunit --order-by=random --testdox",
+        "test": "composer run-script composer:validate && composer check-platform-reqs && composer run-script lint && composer run-script test:phpunit",
+        "generate:licenses": "php-legal-licenses generate",
+        "post-update-cmd": [
+            "composer run-script generate:licenses"
+        ],
+        "post-install-cmd": [
+            "composer run-script generate:licenses"
+        ],
+        "pre-update-cmd": [
+            "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi",
+            "@php artisan statamic:install --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

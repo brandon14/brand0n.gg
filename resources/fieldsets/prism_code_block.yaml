@@ -1,0 +1,36 @@
+title: 'Prism Code Block'
+fields:
+  -
+    handle: code
+    field:
+      theme: material
+      mode: php
+      indent_type: spaces
+      indent_size: 4
+      key_map: default
+      line_numbers: true
+      line_wrapping: true
+      display: Code
+      type: code
+      icon: code
+      instructions: 'Type your code here man'
+      listable: hidden
+  -
+    handle: code_language
+    field:
+      placeholder: php
+      input_type: text
+      antlers: false
+      display: 'Code Language'
+      type: text
+      icon: text
+      instructions: 'Enter the code snippets language here (i.e. php, javascript, something recognized by Prism).'
+      listable: hidden
+  -
+    handle: show_line_numbers
+    field:
+      display: 'Show Line Numbers'
+      type: toggle
+      icon: toggle
+      instructions: 'Shows line number sin code snippet'
+      listable: hidden

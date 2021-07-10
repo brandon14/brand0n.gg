@@ -1,0 +1,37 @@
+title: Fossabot
+data:
+  birthday: '1989-08-11 00:00'
+  birthday_timezone: America/New_York
+  on_birthday_response: 'It''s ma birthday'
+  on_birthday_emojis:
+    - FeelsBirthdayMan
+  birthday_response: 'My birthday is in %daysUntil% days'
+  birthday_emojis:
+    - FeelsBirthdayMan
+  age_response: '%age% (Birthday 08/11)'
+  age_emojis:
+    - BOOMER
+  apex_rank_response: '%rankName% %rankDiv%'
+  apex_rank_emojis:
+    - PepegaAim
+    - Stonks
+    - YEP
+  apex_account_uid: 2435530623
+  not_response: 'Oh snap, bruh that command does not exist'
+  not_found_emojis:
+    - NotLikeThis
+    - PLEASENO
+    - Sadge
+    - SadCat
+    - PressF
+    - WeirdChamping
+    - ThisIsFine
+  exception_response: 'Oh snap, we had some trouble with your request'
+  exception_emojis:
+    - NotLikeThis
+    - PLEASENO
+    - PressF
+    - SadCat
+    - Sadge
+    - WeirdChamping
+    - ThisIsFine

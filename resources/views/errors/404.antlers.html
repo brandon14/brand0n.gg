@@ -1,0 +1,26 @@
+{{#
+	@name Error: 404
+	@desc The 404 error template.
+#}}
+
+{{# Redirect if current_url is in the Redirects global. #}}
+{{ redirects:redirects where="url_old:{current_uri}"}}
+  {{ redirect to="{entry:url}" response="{response}" }}
+{{ /redirects:redirects }}
+
+{{# Yield a title to the SEO partial. #}}
+{{ section:seo_title }}
+  {{ configuration:404_page_title }}
+{{ /section:seo_title }}
+
+<main class="w-full pb-6 pt-14 md:pt-16 lg:pb-12 lg:pt-24 text-center">
+  <article class="fluid-container">
+    {{ partial:typography/h1 class="mb-4 font-normal text-lg" :content="configuration:404_page_header" }}
+    <div class="flex items-center justify-center mb-1">
+      <img src="{{ glide src="/assets/misc/notlikethis.png" width="600" height="400" }}">
+    </div>
+    {{ configuration:404_error_page_page_builder scope="block" }}
+      {{ partial src="page_builder/{type}" }}
+    {{ /configuration:404_error_page_page_builder }}
+  </article>
+</main>

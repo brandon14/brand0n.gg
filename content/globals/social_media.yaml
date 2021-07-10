@@ -1,0 +1,39 @@
+title: 'Social media'
+data:
+  social_media_links:
+    -
+      name: Twitch
+      url: 'https://twitch.tv/brand0n14125'
+      font_awesome_classes: 'fab fa-twitch'
+      hover_color: text-twitch-purple
+      aria_label: brand0n14125
+    -
+      name: Twitter
+      url: 'https://twitter.com/inhal3exh4le'
+      font_awesome_classes: 'fab fa-twitter'
+      hover_color: text-twitter-blue
+      aria_label: inhal3exh4le
+    -
+      name: Discord
+      url: 'https://discord.gg/NZ8Crqg'
+      font_awesome_classes: 'fab fa-discord'
+      hover_color: text-discord-blurple
+      aria_label: 'brand0n14125#0808'
+    -
+      name: Insta
+      url: 'https://www.instagram.com/b_randon14'
+      font_awesome_classes: 'fab fa-instagram'
+      hover_color: text-instagram-dark-pink
+      aria_label: b_randon14
+    -
+      name: Spotify
+      url: 'https://open.spotify.com/user/1277565121'
+      font_awesome_classes: 'fab fa-spotify'
+      hover_color: text-spotify-green
+      aria_label: brand0n14125
+    -
+      name: Linktr.ee
+      url: 'https://linktr.ee/brand0n14125'
+      font_awesome_classes: 'fas fa-tree'
+      hover_color: text-linktree-green
+      aria_label: brand0n14125

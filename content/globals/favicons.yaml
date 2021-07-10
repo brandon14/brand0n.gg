@@ -1,0 +1,10 @@
+title: Favicons
+data:
+  use: true
+  svg: logo.svg
+  safari_color: '#222222'
+  ios_color: '#222222'
+  chrome_color: '#222222'
+  safari_mask_icon: logo.svg
+  apple_touch_icon: apple-touch-icon.png
+  android_chrome: android-chrome-512x512.png

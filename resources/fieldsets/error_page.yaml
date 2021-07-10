@@ -1,0 +1,29 @@
+title: 'Error Page'
+fields:
+  -
+    handle: page_title
+    field:
+      placeholder: '404'
+      input_type: text
+      character_limit: 155
+      antlers: false
+      display: 'Page Title'
+      type: text
+      icon: text
+      instructions: 'Page title (will be used as title and in SEO).'
+      listable: hidden
+      validate:
+        - required
+  -
+    handle: page_header
+    field:
+      input_type: text
+      antlers: false
+      display: 'Page Header'
+      type: text
+      icon: text
+      instructions: 'Header to be displayed at the top before the error message contents. Can be empty.'
+      listable: hidden
+  -
+    import: page_builder
+    prefix: 'error_page_'

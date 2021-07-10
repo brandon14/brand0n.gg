@@ -1,0 +1,45 @@
+{{#
+	@name Peak toolbar
+	@desc The Peak toolbar component displaying debug information.
+#}}
+
+{{ if environment == 'local' }}
+    <aside
+        class="fixed z-50 bottom-1 right-1 flex text-xs divide-x divide-white shadow-sm divide-solid transition-opacity hover:opacity-100"
+        x-data="{ visible: window.getCookie('toolbar_visible') }"
+        x-ref="toolbar"
+        :class="{ 'opacity-100': visible, 'opacity-0': !visible }"
+        x-cloak
+    >
+        <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-yellow-800 bg-yellow-200">
+            <i class="fas fa-ruler text-sm"></i>
+            <span class="breakpoint"></span>
+        </span>
+
+        {{ if logged_in == true }}
+            <a href="{{ edit_url }}" title="Edit entry in CP" aria-label="Edit entry in CP" target="_blank" class="flex items-center p-2 space-x-1 text-gray-800 bg-gray-200 hover:bg-gray-300">
+                <i class="fas fa-pencil-alt text-sm text-black"></i>
+                <span>Edit</span>
+            </a>
+        {{ /if }}
+
+        <button
+            @click="visible = !visible, visible ? window.setCookie('toolbar_visible', true) : window.setCookie('toolbar_visible', false)"
+            title="Toggle toolbar visibility" aria-label="Toggle toolbar visibility" class="flex items-center justify-center px-2 bg-gray-200 hover:bg-gray-300"
+        >
+            <div :class="{ 'hidden': visible, 'block': !visible }">
+                <i class="fas fa-eye-slash text-sm text-black"></i>
+            </div>
+            <div :class="{ 'block': visible, 'hidden': !visible }">
+                <i class="fas fa-eye text-sm text-black"></i>
+            </div>
+        </button>
+
+        <button
+            @click="$refs.toolbar.remove()"
+            title="Remove toolbar" aria-label="Remove toolbar" class="flex items-center justify-center px-2 bg-gray-200 hover:bg-gray-300"
+        >
+            <i class="fas fa-trash text-sm text-yellow-800"></i>
+        </button>
+    </aside>
+{{ /if }}

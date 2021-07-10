@@ -1,0 +1,8 @@
+title: Configuration
+data:
+  website_version: 0.4.20-alpha
+  404_page_title: 'KEKWait, dude I can''t find that page... | 404'
+  404_page_header: 'Ah shit... here we go again.'
+  503_page_title: 'brb breh | 503'
+  503_page_header: 'Sorry dude :-('
+  header_logo: icons/logo-32.png

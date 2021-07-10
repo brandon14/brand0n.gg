@@ -1,0 +1,20 @@
+{{#
+@name Default
+@desc The default template with an outer wrapper grid as defined in tailwind.config.js. It makes sure all blocks
+      on a page get evenly spaced without having to worry about margins or paddings.
+#}}
+
+{{# Yeild landing_seciton outside of main div and above all other markup #}}
+{{ yield:landing_section }}
+
+<main class="outer-grid" x-ref="main">
+  {{ page_builder scope="block" }}
+    {{ if type == 'landing_section' }}
+      {{ section:landing_section }}
+        {{ partial src="page_builder/{type}" }}
+      {{ /section:landing_section }}
+    {{ else }}
+      {{ partial src="page_builder/{type}" }}
+    {{ /if }}
+  {{ /page_builder }}
+</main>

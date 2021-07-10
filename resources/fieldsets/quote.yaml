@@ -1,0 +1,24 @@
+title: Quote
+fields:
+  -
+    handle: quote_text
+    field:
+      placeholder: 'There is only one corner of the universe you can be certain of improving, and that''s your own self.'
+      character_limit: '500'
+      antlers: false
+      display: 'Quote Text'
+      type: textarea
+      icon: textarea
+      instructions: 'The quote, duh.'
+      listable: hidden
+  -
+    handle: author
+    field:
+      placeholder: 'Aldous Huxley'
+      input_type: text
+      antlers: false
+      display: Author
+      type: text
+      icon: text
+      instructions: 'Who said what was said ya mean?'
+      listable: hidden

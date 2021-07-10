@@ -1,0 +1,162 @@
+{
+  "name": "brand0n.gg",
+  "description": "Frontend assets for brand0n.gg",
+  "private": true,
+  "keywords": [
+    "laravel",
+    "laravel-mix",
+    "webpack",
+    "statamic",
+    "alpinejs",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brandon14/brandonclothier.me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brandon14/brandonclothier.me/issues",
+    "email": "brand0n@brand0n.gg"
+  },
+  "engines": {
+    "npm": ">=7.10.0",
+    "node": ">=14.16.1"
+  },
+  "contributors": [
+    {
+      "name": "Brandon Clothier",
+      "url": "https://brand0n.gg",
+      "email": "brad0n@brand0n.gg"
+    }
+  ],
+  "author": "Brandon Clothier <brand0n@brand0n.gg> (https://brand0n.gg)",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "npm run lint && npm run php:lint && npm run php:test",
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:eslint": "eslint --ignore-path .gitignore --color --format codeframe",
+    "lint:js": "npm run lint:eslint -- ./resources/js ",
+    "lint:sass": "sass-lint",
+    "php:lint": "composer run-script lint",
+    "php:lint:fix": "composer run-script lint:fix",
+    "php:test": "composer run-script test"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "markup",
+            "css",
+            "clike",
+            "javascript",
+            "git",
+            "handlebars",
+            "markdown",
+            "php",
+            "php-extras",
+            "textile",
+            "yaml",
+            "apacheconf",
+            "bash",
+            "cpp",
+            "cmake",
+            "csharp",
+            "c",
+            "css-extras",
+            "diff",
+            "editorconfig",
+            "ejs",
+            "go",
+            "http",
+            "ignore",
+            "ini",
+            "java",
+            "javadoc",
+            "jsdoc",
+            "js-extras",
+            "json",
+            "json5",
+            "jsonp",
+            "kotlin",
+            "less",
+            "lua",
+            "makefile",
+            "nginx",
+            "perl",
+            "phpdoc",
+            "plsql",
+            "powershell",
+            "pug",
+            "python",
+            "jsx",
+            "tsx",
+            "regex",
+            "ruby",
+            "sass",
+            "scss",
+            "batch",
+            "sql",
+            "twig",
+            "typescript",
+            "unrealscript",
+            "wasm",
+            "xml-doc"
+          ],
+          "plugins": [
+            "show-language",
+            "line-numbers",
+            "autolinker",
+            "command-line",
+            "remove-initial-line-feed",
+            "inline-color",
+            "diff-highlight",
+            "data-uri-highlight",
+            "normalize-whitespace",
+            "autoloader"
+          ],
+          "theme": "tomorrow",
+          "css": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
+    "alpinejs": "^3.0.6",
+    "autoprefixer": "^10.2.6",
+    "babel-plugin-prismjs": "^2.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "focus-visible": "^5.2.0",
+    "glob-all": "^3.2.1",
+    "laravel-mix": "^6.0.21",
+    "postcss": "^8.3.5",
+    "postcss-focus-visible": "^5.0.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.5",
+    "postcss-preset-env": "^6.7.0",
+    "prismjs": "^1.23.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "tailwindcss": "^2.2.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

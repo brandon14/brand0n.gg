@@ -1,0 +1,49 @@
+os:
+  - linux
+
+language: php
+
+php:
+  - 7.4
+  - 8.0
+  - nightly
+
+jobs:
+  allow_failures:
+    - php: nightly
+
+env:
+  - PHP_CS_FIXER_IGNORE_ENV=true
+
+sudo: required
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+services:
+  - mysql
+
+before_script:
+  - phpenv config-add travis.ini
+  - cp .env.travis .env
+  - mysql -u root -e 'create database travis_ci;'
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+  - php artisan key:generate
+  - composer dump-autoload
+  - composer validate --no-check-all --strict
+  - sudo chgrp -R www-data storage bootstrap/cache
+  - sudo chmod -R ug+rwx storage bootstrap/cache
+  - php artisan config:cache
+  - nvm install --lts --latest-npm --reinstall-packages-from='lts/*'
+  - npm install npm@latest -g
+  - npm install -g yarn
+  - yarn
+  - npm run development
+
+script:
+  - composer run-script test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

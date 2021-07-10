@@ -1,0 +1,22 @@
+# brand0n.gg TODO
+
+## Version 1.0 TODO:
+
+### Backend
+
+- Clean up Bgg section and write tests for ApexApi service and fix broken tests.
+- Document all classes, reformat, add strict types, etc, etc.
+- Clean up currently documented classes to ensure they make sense and are concise.
+
+### Frontend
+
+- Reformat antlers templates.
+- Convert all templates to work with dark mode.
+- Fix search form and header/mobile menu.
+- Refine website theme, and possibly tweak blueprints to make maintaining/adding stuff easier.
+- Clean up SEO and fully set it up along with social images and webmanifests, etc.
+
+### Build Pipeline
+
+- Add in phpunit tests on composer install and update scripts (composer run-script test:phpunit).
+- Fix and enable linting and static analysis.

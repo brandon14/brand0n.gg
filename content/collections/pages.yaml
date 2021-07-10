@@ -1,0 +1,18 @@
+title: Pages
+amp: true
+template: default
+layout: layout
+taxonomies:
+  - tags
+revisions: false
+route: '{parent_uri}/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+inject:
+  view_model: App\ViewModels\RandomQuote
+structure:
+  root: true
+  max_depth: 3

@@ -1,0 +1,68 @@
+sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: section_general
+        field:
+          type: section
+          listable: hidden
+          display: 'General configuration'
+          instructions: 'Global site configuration options.'
+      -
+        handle: html
+        field:
+          html: 'This is where you can add site specific configuration options like color options or globally used e-mail addresses.'
+          display: 'General configuration'
+          type: html
+          icon: code
+          listable: hidden
+      -
+        handle: website_version
+        field:
+          placeholder: 0.4.20-alpha
+          input_type: text
+          antlers: false
+          display: 'Website Version'
+          type: text
+          icon: text
+          instructions: 'Breh put the version of this website here.'
+          listable: hidden
+  error_messages:
+    display: 'Error messages'
+    fields:
+      -
+        handle: section_404
+        field:
+          type: section
+          listable: hidden
+          display: '404 error'
+      -
+        import: error_page
+        prefix: '404_'
+      -
+        handle: section_503
+        field:
+          display: '503 error'
+          type: section
+          icon: section
+          listable: hidden
+      -
+        import: error_page
+        prefix: '503_'
+  header:
+    display: Header
+    fields:
+      -
+        handle: header_logo
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Header logo'
+          type: assets
+          icon: assets
+          instructions: 'Header logo here. Should be about 32x32 pixels.'
+          listable: hidden

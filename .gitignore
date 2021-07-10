@@ -1,0 +1,72 @@
+# Node modules
+/node_modules
+
+# Key files
+/storage/*.key
+
+# Composer vendor folder
+/vendor
+
+# Vargrant and homestead files
+/.vagrant
+Homestead.json
+Homestead.yaml
+
+# Dotenv file
+.env
+.env.backup
+.env.gen
+
+# Yarn and node files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Yarn 2.0 files (using Zero installs)
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Mac OS shit
+.DS_Store
+
+# Webpack stats.json file
+/resources/assets/stats.json
+
+# PHP Unit code coverage files
+coverage.xml
+coverage.text
+coverage.html
+.phpunit.result.cache
+
+# PHP Coding Standards Fixer cache file
+.php_cs.cache
+
+# IntelliJ IDE folders
+.idea
+
+# Docker files
+docker-compose.override.yml
+
+# IDE-Helper files
+./_ide_helper.php
+
+# Statamic files and other frontend assets
+/public/hot
+/public/storage
+/public/vendor/statamic
+/public/img/
+/public/static/
+/storage/antlers-language-server
+/public/css/site.css
+/public/js/site.js
+/public/js/site.js.map
+/public/js/site.js.LICENSE.txt
+/public/js/manifest.js
+/public/js/vendor.js
+/public/mix-manifest.json
+/public/webfonts

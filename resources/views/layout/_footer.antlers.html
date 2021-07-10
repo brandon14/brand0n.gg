@@ -1,0 +1,19 @@
+{{#
+	@name Footer
+	@desc The sites footer rendered on each page.
+#}}
+
+<footer class="w-full py-6 lg:py-12 text-center mt-4">
+  <nav>
+    {{ if social_media:social_media_links }}
+      <div class="flex items-center justify-center">
+      {{ social_media:social_media_links }}
+        <a href="{{ url }}" rel="noopener" aria-label="{{ aria_label ?? config:app:name }} {{ trans:strings.on }} {{ name }}" title="{{ name }}" target="_blank"><i class="{{ font_awesome_classes }} hover:{{ hover_color ?? 'text-strem-pink' }} text-2xl px-3"></i></a>
+      {{ /social_media:social_media_links }}
+      </div>
+    {{ /if }}
+    <div class="text-sm mt-1">&copy; 2021 {{ unless (now | format:Y) == '2021' }} &dash; {{ now | format:Y }}{{ /unless }} {{ settings:site_name }} –&nbsp;Powered by <a href="https://statamic.com" class="hover:text-strem-pink">Statamic</a> &amp; <a href="https://laravel.com" class="hover:text-strem-pink">Laravel 8</a></div>
+    <div class="text-xs mt-1 text-neutral-600">Version: {{ configuration:website_version }}</div>
+  </nav>
+</footer>
+{{ dump }}

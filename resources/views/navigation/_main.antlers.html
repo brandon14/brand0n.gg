@@ -1,0 +1,128 @@
+{{#
+	@name Main navigation
+	@desc The sites main navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity. There's a desktop and a mobile version.
+#}}
+
+{{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
+<nav class="hidden md:block">
+    <ul class="flex items-center space-x-8" x-show="! searching">
+        {{ nav:main max_depth="2" include_home="true" }}
+            <li
+                {{ if children }}
+                    x-data="{ subnavOpen: false }"
+                {{ /if }}
+                class="relative leading-none"
+            >
+                <a
+                    class="flex items-center font-bold text-xs uppercase tracking-wide {{ is_current || is_parent ? 'text-primary hover:text-white' : 'text-white hover:text-primary' }}"
+                    {{ if children }}
+                        href="#"
+                        @click.prevent="subnavOpen = !subnavOpen"
+                    {{ else }}
+                        href="{{ url }}"
+                    {{ /if }}
+                >
+                    {{ title }}
+                    {{ if children }}
+                        <svg class="w-2 ml-1 overflow-visible stroke-current"
+                            :class="{ 'rotate-180': subnavOpen }"
+                            aria-hidden="true"
+                            stroke-width="16"
+                            viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        /></svg>
+                    {{ /if }}
+                </a>
+                {{ if children }}
+                    <ul
+                        x-show="subnavOpen"
+                        class="absolute py-2 bg-white dark:bg-black"
+                        :aria-expanded="subnavOpen"
+                        @click.outside="subnavOpen = false"
+                        x-cloak
+                    >
+                        {{ children }}
+                            <li class="">
+                                <a
+                                    class="whitespace-nowrap py-2 block text-xs font-bold {{ is_current || is_parent ? 'text-primary hover:text-white' : 'text-white hover:text-primary' }}"
+                                    href="{{ url }}"
+                                >
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{ /children }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav:main }}
+        {{# {{ partial:components/search_form }} #}}
+        {{ yield:dark_mode_toggle }}
+    </ul>
+</nav>
+
+{{# The mobile navigation. Hidden from md and up #}}
+<nav class="md:hidden" x-data="{ mobileNavOpen: false }">
+    <button
+        @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-12 h-12 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-primary text-uppercase rounded-sm"
+        aria-label="Toggle menu"
+        x-html="mobileNavOpen ? '<i class=\'fas fa-times text-xl\'></i>' : '<i class=\'fas fa-bars text-xl\'></i>'"
+    ></button>
+
+    <ul
+        class="fixed inset-0 z-10 flex flex-col items-center justify-center space-y-8 overflow-auto bg-white dark:bg-black"
+        x-show="mobileNavOpen"
+        x-cloak
+    >
+        <div class="fixed right-1 top-1">
+          {{# {{ partial:components/search_form_mobile }} #}}
+          {{ yield:dark_mode_toggle_mobile }}
+        </div>
+        {{ nav:main max_depth="2" include_home="true" }}
+            <li
+                {{ if children }}
+                    x-data="{ mobileNavSubnavOpen: false }"
+                {{ /if }}
+                class="leading-none"
+            >
+                <a
+                    class="flex items-center font-bold uppercase tracking-wide {{ is_current || is_parent ? 'text-primary hover:text-black dark:hover:text-white' : 'hover:text-primary' }}"
+                    {{ if children }}
+                        href="#"
+                        @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
+                        @click.outside="mobileNavSubnavOpen = false"
+                    {{ else }}
+                        href="{{ url }}"
+                    {{ /if }}
+                >
+                   {{ title }}
+                   {{ if children }}
+                        <svg class="w-2 ml-1 overflow-visible stroke-current"
+                            :class="{ 'rotate-180': mobileNavSubnavOpen }"
+                            aria-hidden="true"
+                            stroke-width="16"
+                            viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        /></svg>
+                    {{ /if }}
+                </a>
+                {{ if children }}
+                    <ul
+                        x-show="mobileNavSubnavOpen"
+                        class="mt-4 space-y-4"
+                        :aria-expanded="mobileNavSubnavOpen"
+                        x-cloak
+                    >
+                        {{ children }}
+                            <li>
+                                <a
+                                    class="whitespace-nowrap font-bold {{ is_current || is_parent ? 'text-primary hover:text-black dark:hover:text-white' : 'hover:text-primary' }}"
+                                    href="{{ url }}">
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{ /children }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav:main }}
+    </ul>
+</nav>

@@ -1,0 +1,11 @@
+{{#
+	@name Header
+	@desc The sites header rendered on each page.
+#}}
+<header class="w-full py-2 lg:py-1 fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80" x-data="{ searching: false }">
+  <div class="fluid-container flex justify-between items-center">
+    {{# Make partials you want to use for the header or use and edit premade examples like the following ones. #}}
+    {{ partial:components/logo width="36" }}
+    {{ partial:navigation/main }}
+  </div>
+</header>

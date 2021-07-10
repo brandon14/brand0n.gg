@@ -1,0 +1,6 @@
+<script src="{{ mix src='/js/manifest.js' }}"></script>
+<script src="{{ mix src='/js/vendor.js' }}"></script>
+<script src="{{ mix src='/js/site.js' }}"></script>
+{{ scripts }}
+  <script src="{{ url }}" {{ if type }} type="{{ type }}" {{ /if }} {{ if extras }} {{ extras }} {{ /if }}></script>
+{{ /scripts }}

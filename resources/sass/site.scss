@@ -1,0 +1,17 @@
+/**
+ * Pull in all the application stylesheets.
+ */
+
+// Base Tailwind.
+@import 'tailwindcss/base';
+
+// FontAwesome 5 styles.
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Custom styles.
+@import 'custom';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

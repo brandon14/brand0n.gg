@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ruleset name="brand0n.gg Standard" namespace="App\CS\Standard">
+  <description>The phpcs coding standard for the brand0n.gg project.</description>
+
+  <!-- Only process .php files. -->
+  <arg name="extensions" value="php" />
+  <!-- Show all errors. -->
+  <arg name="error-severity" value="1" />
+  <!-- Hide warnings. -->
+  <arg name="warning-severity" value="0" />
+  <arg name="colors" />
+  <arg value="sp" />
+
+  <!-- Ignore vendor folder. -->
+  <exclude-pattern>vendor</exclude-pattern>
+  <!-- Ignore boostrap/cache folder -->
+  <exclude-pattern>bootstrap/cache</exclude-pattern>
+  <!-- Ignore database migrations -->
+  <exclude-pattern>database</exclude-pattern>
+  <!-- Ignore stored files -->
+  <exclude-pattern>storage</exclude-pattern>
+  <!-- Ignore blade templates -->
+  <exclude-pattern>*.blade.php</exclude-pattern>
+  <!-- Exclude tests -->
+  <exclude-pattern>tests</exclude-pattern>
+
+  <rule ref="PSR2" />
+
+</ruleset>

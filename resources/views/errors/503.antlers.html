@@ -1,0 +1,21 @@
+{{#
+	@name Error: 503
+	@desc The 503 error template.
+#}}
+
+{{# Redirect if current_url is in the Redirects global. #}}
+{{ redirects:redirects where="url_old:{current_uri}"}}
+  {{ redirect to="{entry:url}" response="{response}" }}
+{{ /redirects:redirects }}
+
+{{# Yield a title to the SEO partial. #}}
+{{ section:seo_title }}
+  brb breh | 503
+{{ /section:seo_title }}
+
+<main class="w-full py-6 lg:py-12 text-center">
+  <article class="fluid-container">
+    {{ partial:typography/h1 class="mb-4" :content="configuration:503_title" }}
+    {{ partial:typography/paragraph :content="configuration:503_text" }}
+  </article>
+</main>
