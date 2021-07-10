@@ -135,7 +135,7 @@ final class FossabotController extends Controller
 
             // Build chat message using configured response template and emojis.
             $response = $this->globals->get('birthday_response') ?? 'My birthday is in %daysUntil% days';
-            $response = str_replace('%daysUntil%', $daysUntil, $response);
+            $response = str_replace('%daysUntil%', (string) $daysUntil, $response);
             $emoji = $this->getRandomEmoji($this->globals->get('birthday_emojis') ?? []) ?? 'FeelsBirthdayMan';
 
             return "{$response} {$emoji}";
@@ -163,7 +163,7 @@ final class FossabotController extends Controller
 
             // Build chat message using configured response template and emojis.
             $response = $this->globals->get('age_response') ?? '%age% (Birthday 08/11)';
-            $response = str_replace('%age%', $age, $response);
+            $response = str_replace('%age%', (string) $age, $response);
             $emoji = $this->getRandomEmoji($this->globals->get('age_emojis') ?? []) ?? 'FeelsBirthdayMan';
 
             return "{$response} {$emoji}";

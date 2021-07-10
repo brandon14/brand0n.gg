@@ -30,7 +30,7 @@ return [
 
         'half' => [
             'driver' => 'application',
-            'expiry' => null,
+            'expiry' => env('STATAMIC_STATIC_CACHE_EXPIRY', null),
         ],
 
         'full' => [

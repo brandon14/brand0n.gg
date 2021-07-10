@@ -5,7 +5,7 @@
   <a href="https://codecov.io/gh/brandon14/brand0n.gg"><img src="https://img.shields.io/codecov/c/github/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="CodeCov"></a>
   <a href="https://david-dm.org/brandon14/brand0n.gg"><img src="https://img.shields.io/david/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Dependencies"></a>
   <a href="https://david-dm.org/brandon14/brand0n.gg#info=devDependencies"><img src="https://img.shields.io/david/dev/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Dev Dependencies"></a>
-  <a href="https://github.com/brandon14/brand0n.gg/blob/master/LICENSE"><img src="https://img.shields.io/github/license/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="License"></a>
+  <a href="https://github.com/brandon14/brand0n.gg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="License"></a>
 </p>
 <p align="center">
   <a href="https://github.com/brandon14/brand0n.gg/issues"><img src="https://img.shields.io/github/issues/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Issues"></a>
@@ -15,8 +15,8 @@
 </p>
 <p align="center">
   <a href="https://github.com/brandon14/brand0n.gg/releases"><img src="https://img.shields.io/github/release/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Github Release"></a>
-  <a href="https://github.com/brandon14/brand0n.gg/commits/master"><img src="https://img.shields.io/github/commit-activity/y/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Github Commits"></a>
-  <a href="https://github.com/brandon14/brand0n.gg/commits/master"><img src="https://img.shields.io/github/last-commit/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Latest Commit"></a>
+  <a href="https://github.com/brandon14/brand0n.gg/commits/main"><img src="https://img.shields.io/github/commit-activity/y/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Github Commits"></a>
+  <a href="https://github.com/brandon14/brand0n.gg/commits/main"><img src="https://img.shields.io/github/last-commit/brandon14/brand0n.gg.svg?style=for-the-badge&maxAge=36000" alt="Latest Commit"></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 

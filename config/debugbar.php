@@ -18,6 +18,10 @@ return [
     'except' => [
         'telescope*',
         'horizon*',
+        'cp*',
+        'site.webmanifest',
+        'sitemap.xml',
+        'fossabot*',
     ],
 
     /*
