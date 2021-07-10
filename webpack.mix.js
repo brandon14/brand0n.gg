@@ -19,7 +19,12 @@ mix.options({
     postCssNested,
     postCssFocusVisible,
     autoprefixer,
-    postCssPresetEnv({stage: 0}),
+    postCssPresetEnv({
+      stage: 0,
+      features: {
+        'focus-within-pseudo-class': false,
+      },
+    }),
   ],
 });
 
