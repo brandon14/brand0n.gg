@@ -152,7 +152,7 @@
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.5",
     "postcss-preset-env": "^6.7.0",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.25.0",
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
